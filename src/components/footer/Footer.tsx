@@ -1,12 +1,14 @@
 import Container from '../container/Container'
+import StyledContainer from '../container/StyledContainer'
 import css from './style.module.css'
 
 function Footer(){
     return(
         <footer className={css.footer}>
-            <Container className={css.container}>
+            <Container>
                 footer
             </Container>
+            <StyledContainer>Footer1</StyledContainer>
         </footer>
     )
 }
