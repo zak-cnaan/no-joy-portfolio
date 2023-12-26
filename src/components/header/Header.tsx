@@ -10,18 +10,28 @@ const Div = styled.div`
 
   ${responsive.min_md} {
     display: block;
+    margin-left:auto;
   }
 `;
 
 const Container = styled(_Container)`
-  padding-top: 0.5rem;
-  padding-top: 0.5rem;
+ 
+  display: flex;
+  align-items: center;
+  gap:1rem;
+  justify-content: space-between;
 `;
 
 const StyledHeader = styled.header`
   position: sticky;
   top: 0;
-  padding: 1rem 0;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+
+  ${responsive.min_md}{
+    padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  }
 
   background-color: hsl(var(--color-accent));
   z-index: 20;
@@ -53,7 +63,7 @@ function Header() {
         <MobileTopMenu />
         <Logo href="/">zak cnaan</Logo>
         <Div>
-          <TopNav />
+          <TopNav variant="web" />
         </Div>
         <ChangeTheme />
       </Container>

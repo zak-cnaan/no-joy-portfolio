@@ -7,6 +7,8 @@ import { responsive } from "../../assets/styles/bp";
 import { FaBars } from "react-icons/fa6";
 import { useState } from 'react';
 
+import TopButton from '../menues/TopButton';
+
 const Div = styled.div`
   ${responsive.min_md} {
     display: none;
@@ -25,13 +27,13 @@ const MobileTopMenu = () => {
 
     return (
         <Div>
-            <button onClick={toggleDrawer}><FaBars /></button>
+            <TopButton onClick={toggleDrawer}><FaBars /></TopButton>
             <D
                 open={isOpen}
                 onClose={toggleDrawer}
-                direction='left'
+                direction='top'
             >
-                <TopNav />
+                <TopNav variant="mobile" />
             </D>
         </Div>
     )

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 // import { GiLinkedRings } from "react-icons/gi";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { MdOutlineLightMode } from "react-icons/md";
+import TopButton from "./menues/TopButton";
 
 function ChangeTheme() {
   const [ mode, setMode ] = useState("light");
@@ -28,10 +29,10 @@ function ChangeTheme() {
 
   return (
     <>
-      <button onClick={toggleDarkMode}
+      <TopButton onClick={toggleDarkMode}
       >
         <DarkModeIcon />
-      </button>
+      </TopButton>
       {/* <IconButton onClick={toggleDarkMode}>
         <DarkModeSwitch onChange={() => null} checked={mode === "light"} />
       </IconButton>
