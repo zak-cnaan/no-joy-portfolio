@@ -48,7 +48,7 @@ function TopNav(props: { variant?: "web" | "mobile" }) {
   return (
     <Ul variant={props.variant}>
       {topNavLinks.map((link) => (
-        <li>
+        <li key={link.text}>
           <a href={link.url}>{link.text}</a>
         </li>
       ))}
