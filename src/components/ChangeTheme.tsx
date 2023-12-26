@@ -8,10 +8,10 @@ function ChangeTheme() {
 
   useEffect(() => {
     const theme = localStorage.getItem("theme");
+    console.log("theme1", theme)
     if (!theme) localStorage.setItem("theme", "light")
     else if (theme === "dark"){
       toggleDarkMode();
-  
     }
   }, [])
 
