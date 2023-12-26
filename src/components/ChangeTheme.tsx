@@ -1,27 +1,28 @@
-// import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { useEffect, useState } from "react";
-// import { FaLinkedin } from "react-icons/fa6";
-// import { GiLinkedRings } from "react-icons/gi";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { MdOutlineLightMode } from "react-icons/md";
 import TopButton from "./menues/TopButton";
 
 function ChangeTheme() {
   const [ mode, setMode ] = useState("light");
-  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    if (!theme) localStorage.setItem("theme", "light")
+    else if (theme === "dark"){
+      toggleDarkMode();
+  
+    }
+  }, [])
+
+
 
   const toggleDarkMode = () => {
-    setMode(mode === "light" ? "dark" : "light");
+    const nextMode = mode === "light" ? "dark" : "light";
+    document.querySelector('html')!.classList.toggle("dark");
+    localStorage.setItem("theme", nextMode);
+    setMode(nextMode);
   };
-
-  // necessary for server-side rendering
-  // because mode is undefined on the server
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  if (!mounted) {
-    return null;
-  }
 
   function DarkModeIcon() {
     return mode === "light" ? <MdOutlineLightMode /> : <MdOutlineDarkMode />;
@@ -33,18 +34,7 @@ function ChangeTheme() {
       >
         <DarkModeIcon />
       </TopButton>
-      {/* <IconButton onClick={toggleDarkMode}>
-        <DarkModeSwitch onChange={() => null} checked={mode === "light"} />
-      </IconButton>
-      <IconButton variant={"outlined"} onClick={toggleDarkMode}>
-        <DarkModeSwitch onChange={() => null} checked={mode === "light"} />
-      </IconButton>
-      <IconButton variant={"solid"} onClick={toggleDarkMode}>
-        <DarkModeSwitch onChange={() => null} checked={mode === "light"} />
-      </IconButton>
-      <IconButton variant={"soft"} onClick={toggleDarkMode}>
-        <DarkModeSwitch onChange={() => null} checked={mode === "light"} />
-      </IconButton> */}
+
     </>
   );
 }

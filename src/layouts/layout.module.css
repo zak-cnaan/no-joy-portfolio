@@ -3,10 +3,6 @@
   display: flex;
   flex-direction: column;
 }
-.header {
-
-}
-
 .main {
   background-color: hsl(var(--color-background));
   z-index: 10;
