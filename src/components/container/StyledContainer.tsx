@@ -8,7 +8,8 @@ const Container = styled.div`
     margin-left: auto;
     padding-right: 1rem;
     padding-left: 1rem;
-    max-width: ${responsiveDesign.get("lg")};
+    // max-width: ${responsiveDesign.get("md")};
+    max-width: var(--bp-lg);
   
     ${responsiveDesign.get("md-up")} {
       padding-right: 2rem;

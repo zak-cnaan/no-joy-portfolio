@@ -28,9 +28,9 @@
   --body-font-weight: var(--fontWeight-sm);
   --body-line-height: var(--lineHeight-md);
 
-  --bp-xs :0;
-  --bp-sm :600;
-  --bp-md :900;
-  --bp-lg :1200;
-  --bp-xl :1536;
+  --bp-xs :0px;
+  --bp-sm :600px;
+  --bp-md :900px;
+  --bp-lg :1200px;
+  --bp-xl :1536px;
 }
