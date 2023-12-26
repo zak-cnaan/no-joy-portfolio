@@ -1,0 +1,16 @@
+@value bp-lg from '../../assets/styles/bp.module.css';
+@value bp-md-up from '../../assets/styles/bp.module.css';
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  max-width: bp-lg;
+
+  @media (bp-md-up) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}

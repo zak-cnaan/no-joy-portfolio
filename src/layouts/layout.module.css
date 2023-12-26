@@ -1,0 +1,17 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  position: sticky;
+  top: 0;
+  background-color: hsl(var(--color-accent));
+  z-index: 20;
+}
+
+.main {
+  background-color: hsl(var(--color-background));
+  z-index: 10;
+  flex-grow: 1;
+}

@@ -1,0 +1,32 @@
+/* @import './bs-norm.css';
+@import './globals.css'; */
+@import "./normalize.css";
+@import "./props.css";
+
+@font-face {
+  font-family: "Mona Sans";
+  src: url("src/assets/fonts/Mona Sans/Mona-Sans.woff2")
+      format("woff2 supports variations"),
+    url("src/assets/fonts/Mona Sans/Mona-Sans.woff2") format("woff2-variations");
+  fontweight: 200 900;
+  fontstretch: 75% 125%;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+body {
+  text-align: left;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  line-height: var(--body-line-height);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  color: hsl(var(--color-foreground));
+  background-color: hsl(var(--color-background));
+}
+
+

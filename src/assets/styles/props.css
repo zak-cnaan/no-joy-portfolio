@@ -1,0 +1,36 @@
+@import "./colors.css";
+
+:root {
+  --fontSize-xs: 0.75rem;
+  --fontSize-sm: 0.875rem;
+  --fontSize-md: 1rem;
+  --fontSize-lg: 1.125rem;
+  --fontSize-xl: 1.25rem;
+  --fontSize-xl2: 1.5rem;
+  --fontSize-xl3: 1.875rem;
+  --fontSize-xl4: 2.25rem;
+
+  --fontWeight-sm: 300;
+  --fontWeight-md: 500;
+  --fontWeight-lg: 600;
+  --fontWeight-xl: 700;
+
+  --lineHeight-xs: 1.33334;
+  --lineHeight-sm: 1.42858;
+  --lineHeight-md: 1.5;
+  --lineHeight-lg: 1.55556;
+  --lineHeight-xl: 1.66667;
+
+  --body-font-family: "Mona Sans", "Mona Sans Fallback", -apple-system,
+  BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --body-font-size: var(--fontSize-md);
+  --body-font-weight: var(--fontWeight-sm);
+  --body-line-height: var(--lineHeight-md);
+
+  --bp-xs :0;
+  --bp-sm :600;
+  --bp-md :900;
+  --bp-lg :1200;
+  --bp-xl :1536;
+}
