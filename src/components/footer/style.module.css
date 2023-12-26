@@ -3,4 +3,6 @@
     bottom: 0;
     background-color: hsl(var(--color-accent));
     border-top:1px solid hsl(var(--color-foreground)/.2);
+    padding:1rem 0;
+
 }

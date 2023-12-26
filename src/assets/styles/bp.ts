@@ -16,4 +16,14 @@ breakingPoints.forEach((item) => {
     responsiveDesign.set(item+"-up",mediaUp);
 })
 
+
+const mediaString = "@media (min-width: ";
+export const responsive = {
+    min_xs:mediaString + "0px)",
+    min_sm:mediaString + "600px)",
+    min_md:mediaString + "900px)",
+    min_lg:mediaString + "1200px)",
+    min_xl:mediaString + "1536px)",
+}
+
 export default responsiveDesign
