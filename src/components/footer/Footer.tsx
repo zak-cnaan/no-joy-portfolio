@@ -1,16 +1,24 @@
-import Container from '../container/Container'
-import StyledContainer from '../container/StyledContainer'
-import css from './style.module.css'
+import styled from "styled-components";
+import _Container from "../container/StyledContainer";
+import SocialNav from "../menues/SocialNav";
+import style from "./style.module.css";
 
-function Footer(){
-    return(
-        <footer className={css.footer}>
-            <Container>
-                footer
-            </Container>
-            <StyledContainer>Footer1</StyledContainer>
-        </footer>
-    )
+const Container = styled(_Container)`
+    text-align:center;
+    padding:1rem 0;
+`
+
+function Footer() {
+  return (
+    <footer className={style.footer}>
+      <Container>
+        <SocialNav />
+        <span>
+          &copy; 2023 &hearts; <span>zak cnaan</span>
+        </span>
+      </Container>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;
