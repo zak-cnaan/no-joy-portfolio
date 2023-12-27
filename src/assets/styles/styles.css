@@ -53,6 +53,10 @@ img{
   max-width: 100%;
   display: inline-block;
 }
+svg{
+  display: block;
+  fill: currentColor;
+}
 body {
   text-align: left;
   font-family: var(--body-font-family);

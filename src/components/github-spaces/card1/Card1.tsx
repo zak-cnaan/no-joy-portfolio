@@ -65,24 +65,24 @@ const Icon = styled.div`
   border-radius: 500rem;
   padding: 0.5rem;
   line-height: 0;
-  svg{
+  svg {
     fill: currentColor;
-    width:24px;
-    height:24px;
+    width: 24px;
+    height: 24px;
   }
 `;
 const Div3 = styled(Div2)`
-    background: rgb(36, 41, 47);
+  background: rgb(36, 41, 47);
 `;
 
 const Glow = styled.img`
-    position: absolute;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    opacity: .7;
-`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+`;
 function Card1() {
   return (
     <>
@@ -127,6 +127,7 @@ function Card1() {
             alt=""
             aria-hidden="true"
             className="position-absolute width-full height-full top-0 left-0"
+            data-
             data-style="opacity: 70%"
             loading="lazy"
             src="https://github.githubassets.com/assets/glow-new-5791965524ef.png"
@@ -148,6 +149,7 @@ function Card1() {
             </Icon>
             <h3
               className="h5-mktg text-medium"
+              data-
               data-style="font-stretch: 125%;"
             >
               Isolated environments
@@ -169,12 +171,12 @@ function Card1() {
             </Icon>
             <h3
               className="h5-mktg text-medium"
+              data-
               data-style="font-stretch: 125%;"
             >
               Access Control
             </h3>
           </Div3>
-      
         </Div1>
       </div>
     </>
