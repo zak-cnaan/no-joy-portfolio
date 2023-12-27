@@ -50,6 +50,7 @@ const Div2 = styled(Div0)`
   h4 {
     font-size: 1rem;
     font-weight: 600;
+    margin-bottom: 0;
   }
 `;
 function Card1() {
