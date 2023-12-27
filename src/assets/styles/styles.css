@@ -49,8 +49,9 @@ a:hover{
   text-decoration: none;
 }
 
-img, svg{
+img{
   max-width: 100%;
+  display: inline-block;
 }
 body {
   text-align: left;
