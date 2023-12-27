@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { MdOutlineLightMode } from "react-icons/md";
-import TopButton from "./menues/TopButton";
+import TopButton from "../menues/TopButton";
 
 function ChangeTheme() {
   const [mode, setMode] = useState("light");

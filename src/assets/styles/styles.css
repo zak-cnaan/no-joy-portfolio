@@ -16,6 +16,42 @@
     box-sizing: border-box;
 }
 
+/* Normlize */
+
+p, ul, ol, dl{
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow: auto;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+input[type=file]{
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+a{
+  color: inherit;
+}
+a:hover{
+  text-decoration: none;
+}
+
+img, svg{
+  max-width: 100%;
+}
 body {
   text-align: left;
   font-family: var(--body-font-family);

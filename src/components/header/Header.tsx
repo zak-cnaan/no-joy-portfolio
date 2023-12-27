@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import _Container from "../container/StyledContainer";
 import TopNav from "../menues/TopNav";
-import ChangeTheme from "../ChangeTheme";
+import ChangeTheme from "./ChangeTheme";
 import MobileTopMenu from "../mobile/MobileTopMenu";
 import { responsive } from "../../assets/styles/bp";
 

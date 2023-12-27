@@ -8,21 +8,22 @@ import Layout from "../layouts/Layout";
 import About from "../pages/About";
 import Home from "../pages/Home";
 import Sink from "../pages/Sink";
-import Spaces from "../pages/github-spaces/Spaces";
+import Spaces from "../pages/Spaces";
 
 import { createBrowserRouter } from "react-router-dom";
+import Paths from "./Paths";
 
 const router = createBrowserRouter([
   {
     element:<NoLayout />,
     children:[
       {
-      path:'/about',
+      path:Paths.About,
       element:<About />
 
       },
       {
-        path:'/spaces',
+        path:Paths.Spaces,
         element:<Spaces />
       }
     ]
@@ -32,11 +33,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        path: "/",
+        path: Paths.Home,
         element: <Home />,
       },
       {
-        path: "/sink",
+        path: Paths.Sink,
         element: <Sink />,
       },
     ],

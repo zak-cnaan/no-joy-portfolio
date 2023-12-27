@@ -13,8 +13,9 @@ function Spaces() {
         data-dark-theme="dark"
       >
         {/* <Header /> */}
-        <Hero1 />
-        <Section2 />
+        {/* <Hero1 />
+        <Section2 /> */}
+        Spaces
       </div>
     </main>
   );

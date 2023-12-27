@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import { responsive } from "../../assets/styles/bp";
+import { Link } from "react-router-dom";
+import Paths from "../../routes/Paths";
 
 const topNavLinks = [
-  { url: "...", text: "About" },
-  { url: "...", text: "Home" },
-  { url: "...", text: "Contact" },
+  { url: Paths.Home, text: "Home" },
+  { url: Paths.Sink, text: "Sink" },
+  { url: Paths.Spaces, text: "Spaces" },
 ];
 
 const Ul = styled.ul<{ variant?: string }>`
@@ -49,7 +51,7 @@ function TopNav(props: { variant?: "web" | "mobile" }) {
     <Ul variant={props.variant}>
       {topNavLinks.map((link) => (
         <li key={link.text}>
-          <a href={link.url}>{link.text}</a>
+          <Link to={link.url}>{link.text}</Link>
         </li>
       ))}
     </Ul>
