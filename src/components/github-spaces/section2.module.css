@@ -1,11 +1,6 @@
 .box {
   padding-top: 40px;
-  background-color: rgb(13, 17, 23);
-  color: rgb(255, 255, 255);
-  font-size: 14px;
-  line-height: 21px;
-  padding-left: 16px;
-  padding-right: 16px;
+ margin-bottom: 40px;
 }
 .title {
   color: rgb(255, 255, 255);
