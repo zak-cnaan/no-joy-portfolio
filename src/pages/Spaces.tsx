@@ -6,6 +6,7 @@ import Card1 from "../components/github-spaces/card1/Card1";
 import css from "./spaces.module.css";
 import Card2 from "../components/github-spaces/card2/Card2";
 import Cards23 from "../components/github-spaces/cards23/Cards23";
+import Footer from "../components/github-spaces/Footer";
 
 const Bg = styled.div`
   background-color: rgb(13, 17, 23);
@@ -30,6 +31,7 @@ function Spaces() {
 
         <Card2 />
         <Cards23 />
+        <Footer />
       </div>
     </main>
   );
