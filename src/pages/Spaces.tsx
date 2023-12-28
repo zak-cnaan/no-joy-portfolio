@@ -7,6 +7,7 @@ import Card2 from "../components/github-spaces/card2/Card2";
 import Cards23 from "../components/github-spaces/cards23/Cards23";
 import Footer from "../components/github-spaces/Footer";
 import SubNav from "../components/github-spaces/SubNav";
+import Header from "../components/github-spaces/Header";
 
 const Bg = styled.div`
   background-color: rgb(13, 17, 23);
@@ -21,7 +22,9 @@ const Bg = styled.div`
 function Spaces() {
   return (
     <main className={css.main}>
+      <Header />
       <div className={css.top}>
+
         <SubNav />
         <Hero1 />
         <Bg>
