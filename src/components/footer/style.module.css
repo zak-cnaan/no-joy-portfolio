@@ -1,8 +1,7 @@
 .footer {
     position: sticky;
     bottom: 0;
-    background-color: hsl(var(--color-accent));
-    border-top:1px solid hsl(var(--color-foreground)/.2);
+    background-color: var(--gray-2);
+    border-top:1px solid var(--gray-6);
     padding:1rem 0;
-
 }

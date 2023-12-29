@@ -4,12 +4,154 @@ import Cards13 from "./Cards13";
 import Cards14 from "./Cards14";
 import Cards15 from "./Cards15";
 import Cards16 from "./Cards16";
-import "../../../assets/styles/radix-theme/theme.css";
 
 const PlayGround = styled.div`
   background-color: var(--gray-1);
   color: var(--gray-12);
   padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  .rt-reset:where(button) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    border: 0;
+  }
+
+  .rt-TabsTriggerInnerHidden {
+    display: none;
+  }
+
+  .rt-Link {
+    color: var(--accent-a11);
+  }
+
+  .rt-BaseButton:where(.rt-variant-solid) {
+    background-color: var(--accent-9);
+    color: var(--accent-9-contrast);
+  }
+  .rt-BaseButton:where(.rt-variant-solid):where(:hover) {
+    background-color: var(--accent-10);
+  }
+
+  .rt-TabsTrigger {
+    color: var(--gray-a11);
+    &:hover {
+      background-color: var(--gray-a3);
+    }
+  }
+  .rt-TabsTrigger:where([data-state="active"]) {
+    color: var(--gray-12);
+    position: relative;
+  }
+
+  .rt-TabsTrigger:where([data-state="active"]):before {
+    box-sizing: border-box;
+    content: "";
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--accent-10);
+  }
+  .rt-Badge{
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin:4px;
+    display: inline-block;
+  }
+  .rt-Badge:where(.rt-variant-solid) {
+    background-color: var(--accent-9);
+    color: var(--accent-9-contrast);
+}
+
+.rt-Badge:where(.rt-variant-solid):where(.rt-high-contrast) {
+    background-color: var(--accent-12);
+    color: var(--accent-1);
+}
+
+.rt-Badge:where(.rt-variant-soft) {
+    background-color: var(--accent-a3);
+    color: var(--accent-a11);
+}
+.rt-Badge:where(.rt-variant-soft):where(.rt-high-contrast) {
+    color: var(--accent-12);
+}
+.rt-Badge:where(.rt-variant-surface) {
+    background-color: var(--color-surface-accent);
+    box-shadow: inset 0 0 0 1px var(--accent-a7);
+    color: var(--accent-a11);
+}
+.rt-Badge:where(.rt-variant-surface):where(.rt-high-contrast) {
+    color: var(--accent-12);
+}
+.rt-Badge:where(.rt-variant-outline) {
+    box-shadow: inset 0 0 0 1px var(--accent-a8);
+    color: var(--accent-a11);
+}
+.rt-Badge:where(.rt-variant-outline):where(.rt-high-contrast) {
+    box-shadow: inset 0 0 0 1px var(--accent-a7),inset 0 0 0 1px var(--gray-a11);
+    color: var(--accent-12);
+}
+
+.rt-Blockquote {
+  margin:0;
+    border-left: 0.25rem solid var(--accent-a6);
+    padding-left: 0.5rem;
+}
+
+[data-accent-color] {
+    color: var(--accent-a11);
+}
+
+.rt-BaseButton:where(.rt-variant-solid) {
+    background-color: var(--accent-9);
+    color: var(--accent-9-contrast);
+}
+
+.rt-variant-solid {
+    background-color: var(--accent-9);
+    color: var(--accent-9-contrast);
+}
+
+.rt-variant-solid:where(.rt-high-contrast) {
+    background-color: var(--accent-12);
+    color: var(--gray-1);
+}
+
+.rt-BaseButton:where(.rt-variant-classic):where([data-disabled]) {
+    cursor: var(--cursor-disabled);
+    color: var(--gray-a8);
+    background-color: var(--gray-2);
+    background-image: none;
+    box-shadow: var(--base-button-classic-disabled-box-shadow);
+    filter: none;
+}
+
+.rt-variant-solid:where([data-disabled]) {
+    color: var(--gray-a8);
+    background-color: var(--gray-a3);
+}
+
+.rt-BaseButton:where(.rt-variant-soft) {
+    background-color: var(--accent-a3);
+}
+.rt-BaseButton:where(.rt-variant-soft,.rt-variant-ghost) {
+    color: var(--accent-a11);
+}
+.rt-BaseButton:where(.rt-variant-soft,.rt-variant-ghost):where(.rt-high-contrast) {
+    color: var(--accent-12);
+}
+
+.rt-BaseButton:where(.rt-variant-soft):where([data-disabled]) {
+  background-color: var(--gray-a3);
+  color: var(--gray-a8);
+}
 `;
 function Card1() {
   return (
@@ -104,7 +246,7 @@ function Card2() {
       </div>
       <div
         className="rt-Grid rt-r-gap-4"
-        data-style="--grid-template-columns-initial: repeat(4, minmax(0, 1fr));"
+        data-data-style="--grid-template-columns-initial: repeat(4, minmax(0, 1fr));"
       >
         <div>
           <p data-accent-color="gray" className="rt-Text rt-r-size-1 rt-r-mb-2">
@@ -112,13 +254,13 @@ function Card2() {
           </p>
           <div
             data-radix-aspect-ratio-wrapper=""
-            data-style="position: relative; width: 100%; padding-bottom: 150%;"
+            data-data-style="position: relative; width: 100%; padding-bottom: 150%;"
           >
-            <div data-style="position: absolute; inset: 0px;">
+            <div data-data-style="position: absolute; inset: 0px;">
               <img
                 src="https://images.unsplash.com/photo-1479030160180-b1860951d696?&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
                 alt="A photo of a blue sky opening up from within a red canyon."
-                data-style="object-fit: cover; width: 100%; height: 100%;"
+                data-data-style="object-fit: cover; width: 100%; height: 100%;"
               />
             </div>
           </div>
@@ -129,13 +271,13 @@ function Card2() {
           </p>
           <div
             data-radix-aspect-ratio-wrapper=""
-            data-style="position: relative; width: 100%; padding-bottom: 100%;"
+            data-data-style="position: relative; width: 100%; padding-bottom: 100%;"
           />
-          <div data-style="position: absolute; inset: 0px;">
+          <div data-data-style="position: absolute; inset: 0px;">
             <img
               src="https://images.unsplash.com/photo-1479030160180-b1860951d696?&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
               alt="A photo of a blue sky opening up from within a red canyon."
-              data-style="object-fit: cover; width: 100%; height: 100%;"
+              data-data-style="object-fit: cover; width: 100%; height: 100%;"
             />
           </div>
         </div>
@@ -146,13 +288,13 @@ function Card2() {
         </p>
         <div
           data-radix-aspect-ratio-wrapper=""
-          data-style="position: relative; width: 100%; padding-bottom: 56.25%;"
+          data-data-style="position: relative; width: 100%; padding-bottom: 56.25%;"
         >
-          <div data-style="position: absolute; inset: 0px;">
+          <div data-data-style="position: absolute; inset: 0px;">
             <img
               src="https://images.unsplash.com/photo-1479030160180-b1860951d696?&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
               alt="A photo of a blue sky opening up from within a red canyon."
-              data-style="object-fit: cover; width: 100%; height: 100%;"
+              data-data-style="object-fit: cover; width: 100%; height: 100%;"
             />
           </div>
         </div>
@@ -160,3481 +302,7 @@ function Card2() {
     </div>
   );
 }
-function Card3() {
-  return (
-    <div className="rt-Flex playground_PlaygroundSection__jQiIu rt-r-display-flex rt-r-fd-column rt-r-jc-start rt-r-gap-5 rt-r-mb-5 sm:rt-r-mb-8">
-      <div className="rt-Flex rt-r-display-flex rt-r-ai-baseline rt-r-jc-start rt-r-gap-4">
-        <h1 id="avatar" className="rt-Heading rt-r-size-6 rt-r-weight-bold">
-          <a
-            data-accent-color="gray"
-            href="#avatar"
-            className="rt-Text rt-reset rt-Link rt-underline-hover rt-high-contrast"
-          >
-            Avatar
-          </a>
-        </h1>
-        <a
-          href="/themes/docs/components/avatar"
-          className="rt-Text rt-reset rt-Link playground_PlaygroundDocsLink__iTdrz rt-underline-auto rt-r-size-2"
-        >
-          View in docs
-        </a>
-      </div>
-      <div dir="ltr" data-orientation="horizontal" className="rt-TabsRoot">
-        <div
-          role="tablist"
-          aria-orientation="horizontal"
-          className="rt-TabsList rt-r-size-2"
-          data-tabindex="0"
-          data-orientation="horizontal"
-          data-style="outline: none;"
-        >
-          <button
-            type="button"
-            role="tab"
-            aria-selected="false"
-            aria-controls="radix-:r1u:-content-theme-colors"
-            data-state="inactive"
-            id="radix-:r1u:-trigger-theme-colors"
-            className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
-            data-orientation="horizontal"
-            data-radix-collection-item=""
-          >
-            <span className="rt-TabsTriggerInner">Theme colors</span>
-            <span className="rt-TabsTriggerInnerHidden">Theme colors</span>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected="true"
-            aria-controls="radix-:r1u:-content-all-colors"
-            data-state="active"
-            id="radix-:r1u:-trigger-all-colors"
-            className="rt-reset rt-TabsTrigger"
-            data-tabindex="0"
-            data-orientation="horizontal"
-            data-radix-collection-item=""
-          >
-            <span className="rt-TabsTriggerInner">All colors</span>
-            <span className="rt-TabsTriggerInnerHidden">All colors</span>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected="false"
-            aria-controls="radix-:r1u:-content-all-sizes"
-            data-state="inactive"
-            id="radix-:r1u:-trigger-all-sizes"
-            className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
-            data-orientation="horizontal"
-            data-radix-collection-item=""
-          >
-            <span className="rt-TabsTriggerInner">All sizes</span>
-            <span className="rt-TabsTriggerInnerHidden">All sizes</span>
-          </button>
-        </div>
-        <div
-          data-state="inactive"
-          data-orientation="horizontal"
-          role="tabpanel"
-          aria-labelledby="radix-:r1u:-trigger-theme-colors"
-          id="radix-:r1u:-content-theme-colors"
-          data-tabindex="0"
-          className="rt-TabsContent"
-          data-style=""
-        ></div>
-        <div
-          data-state="active"
-          data-orientation="horizontal"
-          role="tabpanel"
-          aria-labelledby="radix-:r1u:-trigger-all-colors"
-          id="radix-:r1u:-content-all-colors"
-          data-tabindex="0"
-          className="rt-TabsContent"
-        >
-          <div className="rt-Box rt-r-mt-6">
-            <table className="playground_PlaygroundTable__RTJb6">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th data-data-colspan="5">Solid</th>
-                  <th data-data-colspan="5">Soft</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Gray</td>
-                  <td>
-                    <span
-                      data-accent-color="gray"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1533933269825-da140ad3132f?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.46&amp;fp-z=1.25&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="gray"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="gray"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="gray"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="gray"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="gray"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=faces&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="gray"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="gray"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="gray"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="gray"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Gold</td>
-                  <td>
-                    <span
-                      data-accent-color="gold"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1533933269825-da140ad3132f?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.46&amp;fp-z=1.25&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="gold"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="gold"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="gold"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="gold"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="gold"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=faces&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="gold"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="gold"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="gold"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="gold"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Bronze</td>
-                  <td>
-                    <span
-                      data-accent-color="bronze"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1533933269825-da140ad3132f?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.46&amp;fp-z=1.25&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="bronze"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="bronze"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="bronze"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="bronze"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="bronze"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=faces&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="bronze"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="bronze"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="bronze"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="bronze"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Brown</td>
-                  <td>
-                    <span
-                      data-accent-color="brown"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1526835746352-0b9da4054862?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.45&amp;fp-z=1.8&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="brown"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="brown"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="brown"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="brown"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="brown"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1526510747491-58f928ec870f?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.48&amp;fp-y=0.48&amp;fp-z=1.3&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="brown"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="brown"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="brown"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="brown"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Yellow</td>
-                  <td>
-                    <span
-                      data-accent-color="yellow"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1540331547168-8b63109225b7?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.43&amp;fp-z=1.4&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="yellow"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="yellow"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="yellow"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="yellow"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="yellow"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.49&amp;fp-y=0.5&amp;fp-z=2.5&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="yellow"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="yellow"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="yellow"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="yellow"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Amber</td>
-                  <td>
-                    <span
-                      data-accent-color="amber"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1570158268183-d296b2892211?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=faces&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="amber"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="amber"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="amber"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="amber"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="amber"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1540331547168-8b63109225b7?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.43&amp;fp-z=1.4&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="amber"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="amber"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="amber"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="amber"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Orange</td>
-                  <td>
-                    <span
-                      data-accent-color="orange"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1570158268183-d296b2892211?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=faces&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="orange"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="orange"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="orange"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="orange"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="orange"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1540331547168-8b63109225b7?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.43&amp;fp-z=1.4&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="orange"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="orange"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="orange"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="orange"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Tomato</td>
-                  <td>
-                    <span
-                      data-accent-color="tomato"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1521119989659-a83eee488004?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.45&amp;fp-y=0.37&amp;fp-z=3.5&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="tomato"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="tomato"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="tomato"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="tomato"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="tomato"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1532073150508-0c1df022bdd1?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.48&amp;fp-y=0.35&amp;fp-z=2&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="tomato"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="tomato"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="tomato"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="tomato"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Red</td>
-                  <td>
-                    <span
-                      data-accent-color="red"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1521119989659-a83eee488004?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.45&amp;fp-y=0.37&amp;fp-z=3.5&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="red"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="red"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="red"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="red"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="red"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1532073150508-0c1df022bdd1?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.48&amp;fp-y=0.35&amp;fp-z=2&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="red"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="red"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="red"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="red"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Ruby</td>
-                  <td>
-                    <span
-                      data-accent-color="ruby"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1521119989659-a83eee488004?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.45&amp;fp-y=0.37&amp;fp-z=3.5&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="ruby"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="ruby"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="ruby"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="ruby"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="ruby"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1532073150508-0c1df022bdd1?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.48&amp;fp-y=0.35&amp;fp-z=2&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="ruby"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="ruby"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="ruby"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="ruby"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Crimson</td>
-                  <td>
-                    <span
-                      data-accent-color="crimson"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.3&amp;fp-z=1&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="crimson"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="crimson"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="crimson"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="crimson"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="crimson"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1548361403-cb0c785eea54?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.48&amp;fp-y=0.38&amp;fp-z=1.5&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="crimson"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="crimson"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="crimson"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="crimson"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Pink</td>
-                  <td>
-                    <span
-                      data-accent-color="pink"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.3&amp;fp-z=1&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="pink"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="pink"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="pink"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="pink"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="pink"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1548361403-cb0c785eea54?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.48&amp;fp-y=0.38&amp;fp-z=1.5&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="pink"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="pink"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="pink"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="pink"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Plum</td>
-                  <td>
-                    <span
-                      data-accent-color="plum"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.3&amp;fp-z=1&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="plum"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="plum"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="plum"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="plum"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="plum"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.55&amp;fp-y=0.4&amp;fp-z=1.35&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="plum"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="plum"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="plum"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="plum"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Purple</td>
-                  <td>
-                    <span
-                      data-accent-color="purple"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.3&amp;fp-z=1&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="purple"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="purple"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="purple"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="purple"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="purple"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.55&amp;fp-y=0.4&amp;fp-z=1.35&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="purple"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="purple"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="purple"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="purple"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Violet</td>
-                  <td>
-                    <span
-                      data-accent-color="violet"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.3&amp;fp-z=1&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="violet"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="violet"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="violet"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="violet"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="violet"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.55&amp;fp-y=0.4&amp;fp-z=1.35&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="violet"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="violet"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="violet"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="violet"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Iris</td>
-                  <td>
-                    <span
-                      data-accent-color="iris"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1638727295415-286409421143?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.52&amp;fp-y=0.5&amp;fp-z=1.5&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="iris"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="iris"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="iris"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="iris"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="iris"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1535207010348-71e47296838a?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.35&amp;fp-z=1.3&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="iris"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="iris"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="iris"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="iris"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Indigo</td>
-                  <td>
-                    <span
-                      data-accent-color="indigo"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1638727295415-286409421143?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.52&amp;fp-y=0.5&amp;fp-z=1.5&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="indigo"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="indigo"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="indigo"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="indigo"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="indigo"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1535207010348-71e47296838a?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.35&amp;fp-z=1.3&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="indigo"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="indigo"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="indigo"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="indigo"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Blue</td>
-                  <td>
-                    <span
-                      data-accent-color="blue"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1638727295415-286409421143?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.52&amp;fp-y=0.5&amp;fp-z=1.5&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="blue"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="blue"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="blue"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="blue"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="blue"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1535207010348-71e47296838a?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.35&amp;fp-z=1.3&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="blue"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="blue"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="blue"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="blue"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Cyan</td>
-                  <td>
-                    <span
-                      data-accent-color="cyan"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1554727242-741c14fa561c?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.48&amp;fp-y=0.32&amp;fp-z=1.8&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="cyan"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="cyan"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="cyan"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="cyan"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="cyan"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1535207010348-71e47296838a?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.35&amp;fp-z=1.3&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="cyan"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="cyan"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="cyan"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="cyan"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Teal</td>
-                  <td>
-                    <span
-                      data-accent-color="teal"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1554727242-741c14fa561c?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.48&amp;fp-y=0.32&amp;fp-z=1.8&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="teal"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="teal"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="teal"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="teal"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="teal"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1535207010348-71e47296838a?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.35&amp;fp-z=1.3&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="teal"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="teal"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="teal"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="teal"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Jade</td>
-                  <td>
-                    <span
-                      data-accent-color="jade"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1541823709867-1b206113eafd?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.3&amp;fp-z=1.5&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="jade"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="jade"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="jade"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="jade"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="jade"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1525304937537-4d586f394674?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=faces&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="jade"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="jade"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="jade"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="jade"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Green</td>
-                  <td>
-                    <span
-                      data-accent-color="green"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1541823709867-1b206113eafd?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.3&amp;fp-z=1.5&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="green"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="green"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="green"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="green"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="green"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1525304937537-4d586f394674?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=faces&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="green"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="green"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="green"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="green"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Grass</td>
-                  <td>
-                    <span
-                      data-accent-color="grass"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1541823709867-1b206113eafd?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.3&amp;fp-z=1.5&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="grass"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="grass"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="grass"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="grass"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="grass"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1482849297070-f4fae2173efe?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.475&amp;fp-y=0.38&amp;fp-z=2&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="grass"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="grass"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="grass"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="grass"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Lime</td>
-                  <td>
-                    <span
-                      data-accent-color="lime"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1541823709867-1b206113eafd?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.3&amp;fp-z=1.5&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="lime"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="lime"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="lime"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="lime"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="lime"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1525304937537-4d586f394674?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=faces&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="lime"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="lime"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="lime"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="lime"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Mint</td>
-                  <td>
-                    <span
-                      data-accent-color="mint"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1554727242-741c14fa561c?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.48&amp;fp-y=0.32&amp;fp-z=1.8&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="mint"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="mint"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="mint"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="mint"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="mint"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1535207010348-71e47296838a?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.35&amp;fp-z=1.3&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="mint"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="mint"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="mint"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="mint"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Sky</td>
-                  <td>
-                    <span
-                      data-accent-color="sky"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1638727295415-286409421143?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.52&amp;fp-y=0.5&amp;fp-z=1.5&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="sky"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="sky"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="sky"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="sky"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-solid rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="sky"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <img
-                        className="rt-AvatarImage"
-                        src="https://images.unsplash.com/photo-1535207010348-71e47296838a?&amp;w=128&amp;h=128&amp;dpr=2&amp;q=70&amp;crop=focalpoint&amp;fp-x=0.5&amp;fp-y=0.35&amp;fp-z=1.3&amp;fit=crop"
-                      />
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="sky"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-one-letter">V</span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="sky"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback rt-two-letters">
-                        BG
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="sky"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      data-accent-color="sky"
-                      className="rt-AvatarRoot rt-r-size-3 rt-variant-soft rt-high-contrast"
-                    >
-                      <span className="rt-AvatarFallback">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          fill="currentColor"
-                          data-style="width: 60%; height: 60%;"
-                        >
-                          <path d="M41.5 14c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S33 27.962 33 23 36.813 14 41.5 14zM56.289 43.609C57.254 46.21 55.3 49 52.506 49c-2.759 0-11.035 0-11.035 0 .689-5.371-4.525-10.747-8.541-13.03 2.388-1.171 5.149-1.834 8.07-1.834C48.044 34.136 54.187 37.944 56.289 43.609zM37.289 46.609C38.254 49.21 36.3 52 33.506 52c-5.753 0-17.259 0-23.012 0-2.782 0-4.753-2.779-3.783-5.392 2.102-5.665 8.245-9.472 15.289-9.472S35.187 40.944 37.289 46.609zM21.5 17c4.687 0 8.5 4.038 8.5 9s-3.813 9-8.5 9S13 30.962 13 26 16.813 17 21.5 17z"></path>
-                        </svg>
-                      </span>
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div
-          data-state="inactive"
-          data-orientation="horizontal"
-          role="tabpanel"
-          aria-labelledby="radix-:r1u:-trigger-all-sizes"
-          id="radix-:r1u:-content-all-sizes"
-          data-tabindex="0"
-          className="rt-TabsContent"
-        ></div>
-      </div>
-    </div>
-  );
-}
+
 function Card4() {
   return (
     <div className="rt-Flex playground_PlaygroundSection__jQiIu rt-r-display-flex rt-r-fd-column rt-r-jc-start rt-r-gap-5 rt-r-mb-5 sm:rt-r-mb-8">
@@ -3660,9 +328,9 @@ function Card4() {
           role="tablist"
           aria-orientation="horizontal"
           className="rt-TabsList rt-r-size-2"
-          data-tabindex="0"
+          data-data-tabindex="0"
           data-orientation="horizontal"
-          data-style="outline: none;"
+          data-data-style="outline: none;"
         >
           <button
             type="button"
@@ -3672,7 +340,7 @@ function Card4() {
             data-state="active"
             id="radix-:r22:-trigger-theme-colors"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="0"
+            data-data-tabindex="0"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -3687,7 +355,7 @@ function Card4() {
             data-state="inactive"
             id="radix-:r22:-trigger-all-colors"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -3702,7 +370,7 @@ function Card4() {
             data-state="inactive"
             id="radix-:r22:-trigger-all-sizes"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -3716,9 +384,9 @@ function Card4() {
           role="tabpanel"
           aria-labelledby="radix-:r22:-trigger-theme-colors"
           id="radix-:r22:-content-theme-colors"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
-          data-style=""
+          data-data-style=""
         >
           <div className="rt-Box rt-r-mt-6">
             <table className="playground_PlaygroundTable__RTJb6">
@@ -3856,7 +524,7 @@ function Card4() {
           role="tabpanel"
           aria-labelledby="radix-:r22:-trigger-all-colors"
           id="radix-:r22:-content-all-colors"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
         ></div>
         <div
@@ -3865,7 +533,7 @@ function Card4() {
           role="tabpanel"
           aria-labelledby="radix-:r22:-trigger-all-sizes"
           id="radix-:r22:-content-all-sizes"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
         ></div>
       </div>
@@ -3897,9 +565,9 @@ function Card5() {
           role="tablist"
           aria-orientation="horizontal"
           className="rt-TabsList rt-r-size-2"
-          data-tabindex="0"
+          data-data-tabindex="0"
           data-orientation="horizontal"
-          data-style="outline: none;"
+          data-data-style="outline: none;"
         >
           <button
             type="button"
@@ -3909,7 +577,7 @@ function Card5() {
             data-state="active"
             id="radix-:r26:-trigger-theme-colors"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -3924,7 +592,7 @@ function Card5() {
             data-state="inactive"
             id="radix-:r26:-trigger-all-colors"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -3939,7 +607,7 @@ function Card5() {
             data-state="inactive"
             id="radix-:r26:-trigger-all-sizes"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -3954,7 +622,7 @@ function Card5() {
             data-state="inactive"
             id="radix-:r26:-trigger-all-weights"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -3968,13 +636,13 @@ function Card5() {
           role="tabpanel"
           aria-labelledby="radix-:r26:-trigger-theme-colors"
           id="radix-:r26:-content-theme-colors"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
-          data-style=""
+          data-data-style=""
         >
           <div
             className="rt-Grid rt-r-gap-6 rt-r-mt-6"
-            data-style="--grid-template-columns-initial: auto auto; white-space: nowrap;"
+            data-data-style="--grid-template-columns-initial: auto auto; white-space: nowrap;"
           >
             <div className="rt-Flex rt-r-display-flex rt-r-fd-column rt-r-jc-start rt-r-gap-6">
               <span
@@ -4039,7 +707,7 @@ function Card5() {
           role="tabpanel"
           aria-labelledby="radix-:r26:-trigger-all-colors"
           id="radix-:r26:-content-all-colors"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
         ></div>
         <div
@@ -4048,7 +716,7 @@ function Card5() {
           role="tabpanel"
           aria-labelledby="radix-:r26:-trigger-all-sizes"
           id="radix-:r26:-content-all-sizes"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
         ></div>
         <div
@@ -4057,7 +725,7 @@ function Card5() {
           role="tabpanel"
           aria-labelledby="radix-:r26:-trigger-all-weights"
           id="radix-:r26:-content-all-weights"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
         ></div>
       </div>
@@ -4089,9 +757,9 @@ function Card6() {
           role="tablist"
           aria-orientation="horizontal"
           className="rt-TabsList rt-r-size-2"
-          data-tabindex="0"
+          data-data-tabindex="0"
           data-orientation="horizontal"
-          data-style="outline: none;"
+          data-data-style="outline: none;"
         >
           <button
             type="button"
@@ -4101,7 +769,7 @@ function Card6() {
             data-state="active"
             id="radix-:r2b:-trigger-theme-colors"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -4116,7 +784,7 @@ function Card6() {
             data-state="inactive"
             id="radix-:r2b:-trigger-all-colors"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -4131,7 +799,7 @@ function Card6() {
             data-state="inactive"
             id="radix-:r2b:-trigger-all-sizes"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -4145,17 +813,17 @@ function Card6() {
           role="tabpanel"
           aria-labelledby="radix-:r2b:-trigger-theme-colors"
           id="radix-:r2b:-content-theme-colors"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
-          data-style=""
+          data-data-style=""
         >
           <div className="rt-Box rt-r-mt-6">
             <table className="playground_PlaygroundTable__RTJb6">
               <thead>
                 <tr>
                   <th></th>
-                  <th data-colspan="2">Accent</th>
-                  <th data-colspan="2">Gray</th>
+                  <th data-data-colspan="2">Accent</th>
+                  <th data-data-colspan="2">Gray</th>
                   <th>Disabled</th>
                 </tr>
               </thead>
@@ -4818,7 +1486,7 @@ function Card6() {
           role="tabpanel"
           aria-labelledby="radix-:r2b:-trigger-all-colors"
           id="radix-:r2b:-content-all-colors"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
         ></div>
         <div
@@ -4827,7 +1495,7 @@ function Card6() {
           role="tabpanel"
           aria-labelledby="radix-:r2b:-trigger-all-sizes"
           id="radix-:r2b:-content-all-sizes"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
         ></div>
       </div>
@@ -4859,9 +1527,9 @@ function Card7() {
           role="tablist"
           aria-orientation="horizontal"
           className="rt-TabsList rt-r-size-2"
-          data-tabindex="0"
+          data-data-tabindex="0"
           data-orientation="horizontal"
-          data-style="outline: none;"
+          data-data-style="outline: none;"
         >
           <button
             type="button"
@@ -4871,7 +1539,7 @@ function Card7() {
             data-state="active"
             id="radix-:r2f:-trigger-theme-colors"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -4886,7 +1554,7 @@ function Card7() {
             data-state="inactive"
             id="radix-:r2f:-trigger-all-colors"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -4901,7 +1569,7 @@ function Card7() {
             data-state="inactive"
             id="radix-:r2f:-trigger-all-sizes"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -4915,9 +1583,9 @@ function Card7() {
           role="tabpanel"
           aria-labelledby="radix-:r2f:-trigger-theme-colors"
           id="radix-:r2f:-content-theme-colors"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
-          data-style=""
+          data-data-style=""
         >
           <div className="rt-Box rt-r-mt-6">
             <table className="playground_PlaygroundTable__RTJb6">
@@ -5350,7 +2018,7 @@ function Card7() {
           role="tabpanel"
           aria-labelledby="radix-:r2f:-trigger-all-colors"
           id="radix-:r2f:-content-all-colors"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
         ></div>
         <div
@@ -5359,7 +2027,7 @@ function Card7() {
           role="tabpanel"
           aria-labelledby="radix-:r2f:-trigger-all-sizes"
           id="radix-:r2f:-content-all-sizes"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
         ></div>
       </div>
@@ -5386,12 +2054,12 @@ function Card8() {
           View in docs
         </a>
       </div>
-      <div className="rt-Box" data-style="white-space: nowrap;">
+      <div className="rt-Box" data-data-style="white-space: nowrap;">
         <div className="rt-Flex playground_PlaygroundHeroContainer__Z_40G rt-r-display-flex rt-r-fd-column rt-r-jc-start">
           <div className="rt-Flex playground_PlaygroundHeroContent__PV_P9 rt-r-display-flex rt-r-jc-center rt-r-position-relative">
             <div
               className="rt-Flex rt-r-display-flex rt-r-ai-center rt-r-jc-center rt-r-position-absolute rt-r-inset-0"
-              data-style="overflow: hidden;"
+              data-data-style="overflow: hidden;"
             >
               <svg
                 width="100%"
@@ -5399,7 +2067,7 @@ function Card8() {
                 viewBox="0 0 2560 1920"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                data-style="opacity: 0.6;"
+                data-data-style="opacity: 0.6;"
               >
                 <g>
                   <path
@@ -5592,7 +2260,7 @@ function Card8() {
             </div>
             <div
               className="rt-reset rt-Card rt-r-size-4 rt-variant-surface"
-              data-style="width: 400px;"
+              data-data-style="width: 400px;"
             >
               <div className="rt-CardInner">
                 <h3 className="rt-Heading rt-r-size-6 rt-r-weight-bold rt-r-lt-start rt-r-mb-5">
@@ -5615,7 +2283,7 @@ function Card8() {
                 <div className="rt-Box rt-r-position-relative rt-r-mb-5">
                   <div
                     className="rt-Box rt-r-position-absolute rt-r-top-0 rt-r-right-0"
-                    data-style="margin-top: -2px;"
+                    data-data-style="margin-top: -2px;"
                   >
                     <a
                       href="#card"
@@ -5654,9 +2322,9 @@ function Card8() {
             <thead>
               <tr>
                 <th></th>
-                <th data-style="text-align: left;">Surface</th>
-                <th data-style="text-align: left;">Classic</th>
-                <th data-style="text-align: left;">Ghost</th>
+                <th data-data-style="text-align: left;">Surface</th>
+                <th data-data-style="text-align: left;">Classic</th>
+                <th data-data-style="text-align: left;">Ghost</th>
               </tr>
             </thead>
             <tbody>
@@ -5971,9 +2639,9 @@ function Card9() {
           role="tablist"
           aria-orientation="horizontal"
           className="rt-TabsList rt-r-size-2"
-          data-tabindex="0"
+          data-data-tabindex="0"
           data-orientation="horizontal"
-          data-style="outline: none;"
+          data-data-style="outline: none;"
         >
           <button
             type="button"
@@ -5983,7 +2651,7 @@ function Card9() {
             data-state="active"
             id="radix-:r2j:-trigger-theme-colors"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -5998,7 +2666,7 @@ function Card9() {
             data-state="inactive"
             id="radix-:r2j:-trigger-all-colors"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -6013,7 +2681,7 @@ function Card9() {
             data-state="inactive"
             id="radix-:r2j:-trigger-all-sizes"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -6027,17 +2695,17 @@ function Card9() {
           role="tabpanel"
           aria-labelledby="radix-:r2j:-trigger-theme-colors"
           id="radix-:r2j:-content-theme-colors"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
-          data-style=""
+          data-data-style=""
         >
           <div className="rt-Box rt-r-mt-6">
             <table className="playground_PlaygroundTable__RTJb6">
               <thead>
                 <tr>
                   <th></th>
-                  <th data-colspan="2">Accent</th>
-                  <th data-colspan="2">Gray</th>
+                  <th data-data-colspan="2">Accent</th>
+                  <th data-data-colspan="2">Gray</th>
                   <th>Disabled</th>
                 </tr>
               </thead>
@@ -6068,7 +2736,7 @@ function Card9() {
                           <span
                             data-state="checked"
                             className="rt-CheckboxIndicator"
-                            data-style="pointer-events: none;"
+                            data-data-style="pointer-events: none;"
                           >
                             <svg
                               width="9"
@@ -6103,7 +2771,7 @@ function Card9() {
                           <span
                             data-state="checked"
                             className="rt-CheckboxIndicator"
-                            data-style="pointer-events: none;"
+                            data-data-style="pointer-events: none;"
                           >
                             <svg
                               width="9"
@@ -6150,7 +2818,7 @@ function Card9() {
                           <span
                             data-state="checked"
                             className="rt-CheckboxIndicator"
-                            data-style="pointer-events: none;"
+                            data-data-style="pointer-events: none;"
                           >
                             <svg
                               width="9"
@@ -6186,7 +2854,7 @@ function Card9() {
                           <span
                             data-state="checked"
                             className="rt-CheckboxIndicator"
-                            data-style="pointer-events: none;"
+                            data-data-style="pointer-events: none;"
                           >
                             <svg
                               width="9"
@@ -6236,7 +2904,7 @@ function Card9() {
                             data-state="checked"
                             data-disabled={false}
                             className="rt-CheckboxIndicator"
-                            data-style="pointer-events: none;"
+                            data-data-style="pointer-events: none;"
                           >
                             <svg
                               width="9"
@@ -6284,7 +2952,7 @@ function Card9() {
                           <span
                             data-state="checked"
                             className="rt-CheckboxIndicator"
-                            data-style="pointer-events: none;"
+                            data-data-style="pointer-events: none;"
                           >
                             <svg
                               width="9"
@@ -6319,7 +2987,7 @@ function Card9() {
                           <span
                             data-state="checked"
                             className="rt-CheckboxIndicator"
-                            data-style="pointer-events: none;"
+                            data-data-style="pointer-events: none;"
                           >
                             <svg
                               width="9"
@@ -6366,7 +3034,7 @@ function Card9() {
                           <span
                             data-state="checked"
                             className="rt-CheckboxIndicator"
-                            data-style="pointer-events: none;"
+                            data-data-style="pointer-events: none;"
                           >
                             <svg
                               width="9"
@@ -6402,7 +3070,7 @@ function Card9() {
                           <span
                             data-state="checked"
                             className="rt-CheckboxIndicator"
-                            data-style="pointer-events: none;"
+                            data-data-style="pointer-events: none;"
                           >
                             <svg
                               width="9"
@@ -6452,7 +3120,7 @@ function Card9() {
                             data-state="checked"
                             data-disabled={false}
                             className="rt-CheckboxIndicator"
-                            data-style="pointer-events: none;"
+                            data-data-style="pointer-events: none;"
                           >
                             <svg
                               width="9"
@@ -6500,7 +3168,7 @@ function Card9() {
                           <span
                             data-state="checked"
                             className="rt-CheckboxIndicator"
-                            data-style="pointer-events: none;"
+                            data-data-style="pointer-events: none;"
                           >
                             <svg
                               width="9"
@@ -6535,7 +3203,7 @@ function Card9() {
                           <span
                             data-state="checked"
                             className="rt-CheckboxIndicator"
-                            data-style="pointer-events: none;"
+                            data-data-style="pointer-events: none;"
                           >
                             <svg
                               width="9"
@@ -6582,7 +3250,7 @@ function Card9() {
                           <span
                             data-state="checked"
                             className="rt-CheckboxIndicator"
-                            data-style="pointer-events: none;"
+                            data-data-style="pointer-events: none;"
                           >
                             <svg
                               width="9"
@@ -6618,7 +3286,7 @@ function Card9() {
                           <span
                             data-state="checked"
                             className="rt-CheckboxIndicator"
-                            data-style="pointer-events: none;"
+                            data-data-style="pointer-events: none;"
                           >
                             <svg
                               width="9"
@@ -6668,7 +3336,7 @@ function Card9() {
                             data-state="checked"
                             data-disabled={false}
                             className="rt-CheckboxIndicator"
-                            data-style="pointer-events: none;"
+                            data-data-style="pointer-events: none;"
                           >
                             <svg
                               width="9"
@@ -6700,7 +3368,7 @@ function Card9() {
           role="tabpanel"
           aria-labelledby="radix-:r2j:-trigger-all-colors"
           id="radix-:r2j:-content-all-colors"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
         ></div>
         <div
@@ -6709,7 +3377,7 @@ function Card9() {
           role="tabpanel"
           aria-labelledby="radix-:r2j:-trigger-all-sizes"
           id="radix-:r2j:-content-all-sizes"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
         ></div>
       </div>
@@ -6741,9 +3409,9 @@ function Card10() {
           role="tablist"
           aria-orientation="horizontal"
           className="rt-TabsList rt-r-size-2"
-          data-tabindex="0"
+          data-data-tabindex="0"
           data-orientation="horizontal"
-          data-style="outline: none;"
+          data-data-style="outline: none;"
         >
           <button
             type="button"
@@ -6753,7 +3421,7 @@ function Card10() {
             data-state="active"
             id="radix-:r2n:-trigger-theme-colors"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -6768,7 +3436,7 @@ function Card10() {
             data-state="inactive"
             id="radix-:r2n:-trigger-all-colors"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -6783,7 +3451,7 @@ function Card10() {
             data-state="inactive"
             id="radix-:r2n:-trigger-all-sizes"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -6798,7 +3466,7 @@ function Card10() {
             data-state="inactive"
             id="radix-:r2n:-trigger-all-weights"
             className="rt-reset rt-TabsTrigger"
-            data-tabindex="-1"
+            data-data-tabindex="-1"
             data-orientation="horizontal"
             data-radix-collection-item=""
           >
@@ -6812,21 +3480,21 @@ function Card10() {
           role="tabpanel"
           aria-labelledby="radix-:r2n:-trigger-theme-colors"
           id="radix-:r2n:-content-theme-colors"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
-          data-style=""
+          data-data-style=""
         >
           <div className="rt-Box rt-r-mt-6">
             <table className="playground_PlaygroundTable__RTJb6">
               <thead>
                 <tr>
                   <th></th>
-                  <th data-colspan="2">Accent</th>
-                  <th data-colspan="2">Gray</th>
+                  <th data-data-colspan="2">Accent</th>
+                  <th data-data-colspan="2">Gray</th>
                 </tr>
               </thead>
               <tbody>
-                <tr data-style="vertical-align: baseline;">
+                <tr data-data-style="vertical-align: baseline;">
                   <td>Solid</td>
                   <td>
                     <div className="rt-Flex rt-r-display-flex rt-r-jc-start">
@@ -6863,7 +3531,7 @@ function Card10() {
                     </div>
                   </td>
                 </tr>
-                <tr data-style="vertical-align: baseline;">
+                <tr data-data-style="vertical-align: baseline;">
                   <td>Soft</td>
                   <td>
                     <div className="rt-Flex rt-r-display-flex rt-r-jc-start">
@@ -6900,7 +3568,7 @@ function Card10() {
                     </div>
                   </td>
                 </tr>
-                <tr data-style="vertical-align: baseline;">
+                <tr data-data-style="vertical-align: baseline;">
                   <td>Outline</td>
                   <td>
                     <div className="rt-Flex rt-r-display-flex rt-r-jc-start">
@@ -6937,7 +3605,7 @@ function Card10() {
                     </div>
                   </td>
                 </tr>
-                <tr data-style="vertical-align: baseline;">
+                <tr data-data-style="vertical-align: baseline;">
                   <td>Ghost</td>
                   <td>
                     <div className="rt-Flex rt-r-display-flex rt-r-jc-start">
@@ -6984,7 +3652,7 @@ function Card10() {
           role="tabpanel"
           aria-labelledby="radix-:r2n:-trigger-all-colors"
           id="radix-:r2n:-content-all-colors"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
         ></div>
         <div
@@ -6993,7 +3661,7 @@ function Card10() {
           role="tabpanel"
           aria-labelledby="radix-:r2n:-trigger-all-sizes"
           id="radix-:r2n:-content-all-sizes"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
         ></div>
         <div
@@ -7002,7 +3670,7 @@ function Card10() {
           role="tabpanel"
           aria-labelledby="radix-:r2n:-trigger-all-weights"
           id="radix-:r2n:-content-all-weights"
-          data-tabindex="0"
+          data-data-tabindex="0"
           className="rt-TabsContent"
         ></div>
       </div>
@@ -7038,9 +3706,9 @@ function Cards11() {
             role="tablist"
             aria-orientation="horizontal"
             className="rt-TabsList rt-r-size-2"
-            data-tabindex="0"
+            data-data-tabindex="0"
             data-orientation="horizontal"
-            data-style="outline: none;"
+            data-data-style="outline: none;"
           >
             <button
               type="button"
@@ -7050,7 +3718,7 @@ function Cards11() {
               data-state="active"
               id="radix-:r2s:-trigger-theme-colors"
               className="rt-reset rt-TabsTrigger"
-              data-tabindex="-1"
+              data-data-tabindex="-1"
               data-orientation="horizontal"
               data-radix-collection-item=""
             >
@@ -7065,7 +3733,7 @@ function Cards11() {
               data-state="inactive"
               id="radix-:r2s:-trigger-all-colors"
               className="rt-reset rt-TabsTrigger"
-              data-tabindex="-1"
+              data-data-tabindex="-1"
               data-orientation="horizontal"
               data-radix-collection-item=""
             >
@@ -7080,7 +3748,7 @@ function Cards11() {
               data-state="inactive"
               id="radix-:r2s:-trigger-all-sizes"
               className="rt-reset rt-TabsTrigger"
-              data-tabindex="-1"
+              data-data-tabindex="-1"
               data-orientation="horizontal"
               data-radix-collection-item=""
             >
@@ -7094,17 +3762,17 @@ function Cards11() {
             role="tabpanel"
             aria-labelledby="radix-:r2s:-trigger-theme-colors"
             id="radix-:r2s:-content-theme-colors"
-            data-tabindex="0"
+            data-data-tabindex="0"
             className="rt-TabsContent"
-            data-style=""
+            data-data-style=""
           >
             <div className="rt-Box rt-r-mt-6">
               <table className="playground_PlaygroundTable__RTJb6">
                 <thead>
                   <tr>
                     <th></th>
-                    <th data-colspan="2">Accent</th>
-                    <th data-colspan="2">Gray</th>
+                    <th data-data-colspan="2">Accent</th>
+                    <th data-data-colspan="2">Gray</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -7115,7 +3783,7 @@ function Cards11() {
                         data-state="closed"
                         data-accent-color="accent"
                         className="rt-Grid rt-r-px-3 rt-r-h-8"
-                        data-style="place-items: center; border-radius: var(--radius-3); border: 1px dashed var(--accent-7); cursor: default; white-space: nowrap;"
+                        data-data-style="place-items: center; border-radius: var(--radius-3); border: 1px dashed var(--accent-7); cursor: default; white-space: nowrap;"
                       >
                         <span
                           data-accent-color="accent"
@@ -7130,7 +3798,7 @@ function Cards11() {
                         data-state="closed"
                         data-accent-color="accent"
                         className="rt-Grid rt-r-px-3 rt-r-h-8"
-                        data-style="place-items: center; border-radius: var(--radius-3); border: 1px dashed var(--accent-7); cursor: default; white-space: nowrap;"
+                        data-data-style="place-items: center; border-radius: var(--radius-3); border: 1px dashed var(--accent-7); cursor: default; white-space: nowrap;"
                       >
                         <span
                           data-accent-color="accent"
@@ -7145,7 +3813,7 @@ function Cards11() {
                         data-state="closed"
                         data-accent-color="gray"
                         className="rt-Grid rt-r-px-3 rt-r-h-8"
-                        data-style="place-items: center; border-radius: var(--radius-3); border: 1px dashed var(--accent-7); cursor: default; white-space: nowrap;"
+                        data-data-style="place-items: center; border-radius: var(--radius-3); border: 1px dashed var(--accent-7); cursor: default; white-space: nowrap;"
                       >
                         <span
                           data-accent-color="gray"
@@ -7160,7 +3828,7 @@ function Cards11() {
                         data-state="closed"
                         data-accent-color="gray"
                         className="rt-Grid rt-r-px-3 rt-r-h-8"
-                        data-style="place-items: center; border-radius: var(--radius-3); border: 1px dashed var(--accent-7); cursor: default; white-space: nowrap;"
+                        data-data-style="place-items: center; border-radius: var(--radius-3); border: 1px dashed var(--accent-7); cursor: default; white-space: nowrap;"
                       >
                         <span
                           data-accent-color="gray"
@@ -7178,7 +3846,7 @@ function Cards11() {
                         data-state="closed"
                         data-accent-color="accent"
                         className="rt-Grid rt-r-px-3 rt-r-h-8"
-                        data-style="place-items: center; border-radius: var(--radius-3); border: 1px dashed var(--accent-7); cursor: default; white-space: nowrap; background-color: var(--accent-a2);"
+                        data-data-style="place-items: center; border-radius: var(--radius-3); border: 1px dashed var(--accent-7); cursor: default; white-space: nowrap; background-color: var(--accent-a2);"
                       >
                         <span
                           data-accent-color="accent"
@@ -7193,7 +3861,7 @@ function Cards11() {
                         data-state="closed"
                         data-accent-color="accent"
                         className="rt-Grid rt-r-px-3 rt-r-h-8"
-                        data-style="place-items: center; border-radius: var(--radius-3); border: 1px dashed var(--accent-7); cursor: default; white-space: nowrap; background-color: var(--accent-a2);"
+                        data-data-style="place-items: center; border-radius: var(--radius-3); border: 1px dashed var(--accent-7); cursor: default; white-space: nowrap; background-color: var(--accent-a2);"
                       >
                         <span
                           data-accent-color="accent"
@@ -7208,7 +3876,7 @@ function Cards11() {
                         data-state="closed"
                         data-accent-color="gray"
                         className="rt-Grid rt-r-px-3 rt-r-h-8"
-                        data-style="place-items: center; border-radius: var(--radius-3); border: 1px dashed var(--accent-7); cursor: default; white-space: nowrap; background-color: var(--accent-a2);"
+                        data-data-style="place-items: center; border-radius: var(--radius-3); border: 1px dashed var(--accent-7); cursor: default; white-space: nowrap; background-color: var(--accent-a2);"
                       >
                         <span
                           data-accent-color="gray"
@@ -7223,7 +3891,7 @@ function Cards11() {
                         data-state="closed"
                         data-accent-color="gray"
                         className="rt-Grid rt-r-px-3 rt-r-h-8"
-                        data-style="place-items: center; border-radius: var(--radius-3); border: 1px dashed var(--accent-7); cursor: default; white-space: nowrap; background-color: var(--accent-a2);"
+                        data-data-style="place-items: center; border-radius: var(--radius-3); border: 1px dashed var(--accent-7); cursor: default; white-space: nowrap; background-color: var(--accent-a2);"
                       >
                         <span
                           data-accent-color="gray"
@@ -7244,7 +3912,7 @@ function Cards11() {
             role="tabpanel"
             aria-labelledby="radix-:r2s:-trigger-all-colors"
             id="radix-:r2s:-content-all-colors"
-            data-tabindex="0"
+            data-data-tabindex="0"
             className="rt-TabsContent"
           ></div>
           <div
@@ -7253,7 +3921,7 @@ function Cards11() {
             role="tabpanel"
             aria-labelledby="radix-:r2s:-trigger-all-sizes"
             id="radix-:r2s:-content-all-sizes"
-            data-tabindex="0"
+            data-data-tabindex="0"
             className="rt-TabsContent"
           ></div>
         </div>
@@ -7345,9 +4013,9 @@ function Cards11() {
             role="tablist"
             aria-orientation="horizontal"
             className="rt-TabsList rt-r-size-2"
-            data-tabindex="0"
+            data-data-tabindex="0"
             data-orientation="horizontal"
-            data-style="outline: none;"
+            data-data-style="outline: none;"
           >
             <button
               type="button"
@@ -7357,7 +4025,7 @@ function Cards11() {
               data-state="active"
               id="radix-:r3c:-trigger-theme-colors"
               className="rt-reset rt-TabsTrigger"
-              data-tabindex="-1"
+              data-data-tabindex="-1"
               data-orientation="horizontal"
               data-radix-collection-item=""
             >
@@ -7372,7 +4040,7 @@ function Cards11() {
               data-state="inactive"
               id="radix-:r3c:-trigger-all-colors"
               className="rt-reset rt-TabsTrigger"
-              data-tabindex="-1"
+              data-data-tabindex="-1"
               data-orientation="horizontal"
               data-radix-collection-item=""
             >
@@ -7387,7 +4055,7 @@ function Cards11() {
               data-state="inactive"
               id="radix-:r3c:-trigger-all-sizes"
               className="rt-reset rt-TabsTrigger"
-              data-tabindex="-1"
+              data-data-tabindex="-1"
               data-orientation="horizontal"
               data-radix-collection-item=""
             >
@@ -7401,17 +4069,17 @@ function Cards11() {
             role="tabpanel"
             aria-labelledby="radix-:r3c:-trigger-theme-colors"
             id="radix-:r3c:-content-theme-colors"
-            data-tabindex="0"
+            data-data-tabindex="0"
             className="rt-TabsContent"
-            data-style=""
+            data-data-style=""
           >
             <div className="rt-Box rt-r-mt-6">
               <table className="playground_PlaygroundTable__RTJb6">
                 <thead>
                   <tr>
                     <th></th>
-                    <th data-colspan="2">Accent</th>
-                    <th data-colspan="2">Gray</th>
+                    <th data-data-colspan="2">Accent</th>
+                    <th data-data-colspan="2">Gray</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -7643,7 +4311,7 @@ function Cards11() {
             role="tabpanel"
             aria-labelledby="radix-:r3c:-trigger-all-colors"
             id="radix-:r3c:-content-all-colors"
-            data-tabindex="0"
+            data-data-tabindex="0"
             className="rt-TabsContent"
           ></div>
           <div
@@ -7652,7 +4320,7 @@ function Cards11() {
             role="tabpanel"
             aria-labelledby="radix-:r3c:-trigger-all-sizes"
             id="radix-:r3c:-content-all-sizes"
-            data-tabindex="0"
+            data-data-tabindex="0"
             className="rt-TabsContent"
           ></div>
         </div>
@@ -7677,7 +4345,7 @@ function Cards11() {
         </div>
         <div
           className="rt-Box"
-          data-style="width: calc(580px * var(--scaling));"
+          data-data-style="width: calc(580px * var(--scaling));"
         >
           Versions of the <em className="rt-Em">Lorem ipsum</em> text have been
           used in typesetting at least since the 1960s, when it was popularized
@@ -7712,9 +4380,9 @@ function Cards11() {
             role="tablist"
             aria-orientation="horizontal"
             className="rt-TabsList rt-r-size-2"
-            data-tabindex="0"
+            data-data-tabindex="0"
             data-orientation="horizontal"
-            data-style="outline: none;"
+            data-data-style="outline: none;"
           >
             <button
               type="button"
@@ -7724,7 +4392,7 @@ function Cards11() {
               data-state="active"
               id="radix-:r40:-trigger-specimen"
               className="rt-reset rt-TabsTrigger"
-              data-tabindex="-1"
+              data-data-tabindex="-1"
               data-orientation="horizontal"
               data-radix-collection-item=""
             >
@@ -7739,7 +4407,7 @@ function Cards11() {
               data-state="inactive"
               id="radix-:r40:-trigger-all-colors"
               className="rt-reset rt-TabsTrigger"
-              data-tabindex="-1"
+              data-data-tabindex="-1"
               data-orientation="horizontal"
               data-radix-collection-item=""
             >
@@ -7754,7 +4422,7 @@ function Cards11() {
               data-state="inactive"
               id="radix-:r40:-trigger-all-sizes"
               className="rt-reset rt-TabsTrigger"
-              data-tabindex="-1"
+              data-data-tabindex="-1"
               data-orientation="horizontal"
               data-radix-collection-item=""
             >
@@ -7769,7 +4437,7 @@ function Cards11() {
               data-state="inactive"
               id="radix-:r40:-trigger-all-weights"
               className="rt-reset rt-TabsTrigger"
-              data-tabindex="-1"
+              data-data-tabindex="-1"
               data-orientation="horizontal"
               data-radix-collection-item=""
             >
@@ -7783,13 +4451,13 @@ function Cards11() {
             role="tabpanel"
             aria-labelledby="radix-:r40:-trigger-specimen"
             id="radix-:r40:-content-specimen"
-            data-tabindex="0"
+            data-data-tabindex="0"
             className="rt-TabsContent"
-            data-style=""
+            data-data-style=""
           >
             <div
               className="rt-Box rt-r-mt-6"
-              data-style="width: calc(585px * var(--scaling));"
+              data-data-style="width: calc(585px * var(--scaling));"
             >
               <h1 className="rt-Heading rt-r-size-9 rt-r-weight-bold">
                 The principles of the typographic craft are difficult
@@ -7798,11 +4466,11 @@ function Cards11() {
             </div>
             <div
               className="rt-Grid rt-r-gap-6 rt-r-mt-6"
-              data-style="--grid-template-columns-initial: auto auto;"
+              data-data-style="--grid-template-columns-initial: auto auto;"
             >
               <div
                 className="rt-Box rt-r-pr-4"
-                data-style="width: calc(340px * var(--scaling));"
+                data-data-style="width: calc(340px * var(--scaling));"
               >
                 <h1 className="rt-Heading rt-r-size-5 rt-r-weight-bold rt-r-mb-2">
                   The principles of the typographic craft are difficult
@@ -7816,7 +4484,7 @@ function Cards11() {
               </div>
               <div
                 className="rt-Box"
-                data-style="width: calc(330px * var(--scaling));"
+                data-data-style="width: calc(330px * var(--scaling));"
               >
                 <h1 className="rt-Heading rt-r-size-4 rt-r-weight-bold rt-r-mb-2">
                   The principles of the typographic craft are difficult
@@ -7830,7 +4498,7 @@ function Cards11() {
               </div>
               <div
                 className="rt-Box"
-                data-style="width: calc(290px * var(--scaling));"
+                data-data-style="width: calc(290px * var(--scaling));"
               >
                 <h1 className="rt-Heading rt-r-size-3 rt-r-weight-bold rt-r-mb-1">
                   The principles of the typographic craft are difficult
@@ -7844,7 +4512,7 @@ function Cards11() {
               </div>
               <div
                 className="rt-Box"
-                data-style="width: calc(260px * var(--scaling));"
+                data-data-style="width: calc(260px * var(--scaling));"
               >
                 <h1 className="rt-Heading rt-r-size-2 rt-r-weight-bold rt-r-mb-1">
                   The principles of the typographic craft are difficult
@@ -7864,7 +4532,7 @@ function Cards11() {
             role="tabpanel"
             aria-labelledby="radix-:r40:-trigger-all-colors"
             id="radix-:r40:-content-all-colors"
-            data-tabindex="0"
+            data-data-tabindex="0"
             className="rt-TabsContent"
           ></div>
           <div
@@ -7873,7 +4541,7 @@ function Cards11() {
             role="tabpanel"
             aria-labelledby="radix-:r40:-trigger-all-sizes"
             id="radix-:r40:-content-all-sizes"
-            data-tabindex="0"
+            data-data-tabindex="0"
             className="rt-TabsContent"
           ></div>
           <div
@@ -7882,7 +4550,7 @@ function Cards11() {
             role="tabpanel"
             aria-labelledby="radix-:r40:-trigger-all-weights"
             id="radix-:r40:-content-all-weights"
-            data-tabindex="0"
+            data-data-tabindex="0"
             className="rt-TabsContent"
           ></div>
         </div>
@@ -7899,7 +4567,6 @@ function RadixTheme() {
       <Card99 />
       <Card1 />
       <Card2 />
-      <Card3 />
       <Card4 />
       <Card5 />
       <Card6 />

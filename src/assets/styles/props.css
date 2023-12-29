@@ -1,4 +1,5 @@
-@import "./colors.css";
+/* @import "./colors.css"; */
+@import './radix-theme/theme.css';
 
 :root {
   --fontSize-xs: 0.75rem;

@@ -16,15 +16,15 @@ margin-bottom:0.5rem;
 a{
   padding:0.5rem;
   display:inline-flex;
+  color:var(--gray-12);
   background: none;
-  color: hsl(var(--color-foreground));
   border-radius:4px;
   transition: background-color 0.4s;
 
   &:hover{
 
-    color: hsl(var(--color-background));
-    background: hsl(var(--color-foreground));
+    background:var(--gray-12);
+    color: var(--accent-1);
 
   }
 
