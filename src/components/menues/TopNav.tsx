@@ -15,7 +15,7 @@ const Ul = styled.ul<{ variant?: string }>`
   list-style: none;
 
   a {
-    color: hsl(var(--color-foreground));
+    color: var(--gray-12);
     text-decoration: none;
 
     &:hover {

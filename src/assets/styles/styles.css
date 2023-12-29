@@ -1,16 +1,7 @@
 /* @import './bs-norm.css';
-@import './globals.css'; */
+@import './globals.css'; "Mona Sans" */
 @import "./normalize.css";
 @import "./props.css";
-
-@font-face {
-  font-family: "Mona Sans";
-  src: url("src/assets/fonts/Mona Sans/Mona-Sans.woff2")
-      format("woff2 supports variations"),
-    url("src/assets/fonts/Mona Sans/Mona-Sans.woff2") format("woff2-variations");
-  fontweight: 200 900;
-  fontstretch: 75% 125%;
-}
 
 *, :after, :before {
     box-sizing: border-box;
@@ -43,7 +34,7 @@ input[type=file]{
 }
 
 a{
-  color: inherit;
+  color: var(--accent-a11);
 }
 a:hover{
   text-decoration: none;

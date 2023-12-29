@@ -16,7 +16,8 @@ const Div = styled.div`
 `;
 
 const D = styled(Drawer)`
-  background-color: hsl(var(--color-muted)) !important;
+  background-color: var(--gray-1) !important;
+  border-bottom: 1px solid var(--gray-6);
 `;
 const MobileTopMenu = () => {
   const [isOpen, setIsOpen] = useState(false);

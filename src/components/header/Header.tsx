@@ -4,21 +4,22 @@ import TopNav from "../menues/TopNav";
 import ChangeTheme from "./ChangeTheme";
 import MobileTopMenu from "../mobile/MobileTopMenu";
 import { responsive } from "../../assets/styles/bp";
+import { Link } from "react-router-dom";
+import Paths from "../../routes/Paths";
 
 const Div = styled.div`
   display: none;
 
   ${responsive.min_md} {
     display: block;
-    margin-left:auto;
+    margin-left: auto;
   }
 `;
 
 const Container = styled(_Container)`
- 
   display: flex;
   align-items: center;
-  gap:1rem;
+  gap: 1rem;
   justify-content: space-between;
 `;
 
@@ -28,23 +29,22 @@ const StyledHeader = styled.header`
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 
-  ${responsive.min_md}{
+  ${responsive.min_md} {
     padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
   }
-
-  background-color: hsl(var(--color-accent));
+  background-color: var(--gray-2);
+  border-bottom: 1px solid var(--gray-6);
   z-index: 20;
-  border-bottom: 1px solid hsl(var(--color-foreground) / 0.2);
 `;
 
-const Logo = styled.a`
+const Logo = styled(Link)`
   text-decoration: none;
-  color: hsl(var(--color-foreground) / 0.8);
   font-size: var(--fontSize-lg);
+  color: var(--gray-12);
 
   &:hover {
-    color: hsl(var(--color-foreground));
+    color: var(--gray-11);
   }
 
   ${responsive.min_lg} {
@@ -61,7 +61,7 @@ function Header() {
     <StyledHeader>
       <Container>
         <MobileTopMenu />
-        <Logo href="/">zak cnaan</Logo>
+        <Logo to={Paths.Home}>zak cnaan</Logo>
         <Div>
           <TopNav variant="web" />
         </Div>

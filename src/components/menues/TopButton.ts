@@ -7,14 +7,15 @@ const TopButton = styled.button`
   padding: 0.25rem;
 
   background: none;
-  color: hsl(var(--color-foreground));
+  color: var(--gray-12);
   border-radius: 4px;
   transition: background-color 0.4s;
   cursor: pointer;
 
   &:hover {
     color: hsl(var(--color-background));
-    background: hsl(var(--color-foreground));
+    color: var(--gray-2);
+    background: var(--gray-12);
   }
 
   svg {
