@@ -3,6 +3,7 @@ import { RouterProvider } from "react-router-dom";
 // Layouts
 import NoLayout from "../layouts/NoLayout";
 import Layout from "../layouts/Layout";
+import LayoutWithHero from "../layouts/LayoutWithHero";
 
 // Pages
 import About from "../pages/About";
@@ -14,20 +15,16 @@ import { createBrowserRouter } from "react-router-dom";
 import Paths from "./Paths";
 
 const router = createBrowserRouter([
-  {
-    element:<NoLayout />,
-    children:[
-      {
-      path:Paths.About,
-      element:<About />
-
-      },
-      {
-        path:Paths.Spaces,
-        element:<Spaces />
-      }
-    ]
-  },
+  // {
+  //   element: <LayoutWithHero />,
+  //   children: [
+  //     {
+  //       index: true,
+  //       path: Paths.Home,
+  //       element: <Home />,
+  //     },
+  //   ],
+  // },
   {
     element: <Layout />,
     children: [
@@ -42,6 +39,20 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    element: <NoLayout />,
+    children: [
+      {
+        path: Paths.About,
+        element: <About />,
+      },
+      {
+        path: Paths.Spaces,
+        element: <Spaces />,
+      },
+    ],
+  },
+ 
 ]);
 
 // const _router_example = createBrowserRouter([

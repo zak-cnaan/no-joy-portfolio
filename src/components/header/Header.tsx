@@ -56,9 +56,9 @@ const Logo = styled(Link)`
   }
 `;
 
-function Header() {
+function Header(props: {className?: string}) {
   return (
-    <StyledHeader>
+    <StyledHeader className={props.className}>
       <Container>
         <MobileTopMenu />
         <Logo to={Paths.Home}>zak cnaan</Logo>
