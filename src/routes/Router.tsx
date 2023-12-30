@@ -3,7 +3,6 @@ import { RouterProvider } from "react-router-dom";
 // Layouts
 import NoLayout from "../layouts/NoLayout";
 import Layout from "../layouts/Layout";
-import LayoutWithHero from "../layouts/LayoutWithHero";
 
 // Pages
 import About from "../pages/About";
@@ -52,7 +51,6 @@ const router = createBrowserRouter([
       },
     ],
   },
- 
 ]);
 
 // const _router_example = createBrowserRouter([

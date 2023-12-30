@@ -1,4 +1,4 @@
-import HomeHero from "../components/features/HomeHero";
+import HomeHero from "../features/HomeHero";
 
 function Home() {
   return (

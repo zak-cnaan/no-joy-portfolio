@@ -1,19 +1,5 @@
 # React + TypeScript + Vite
 
-removed:
- "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@fontsource/inter": "^5.0.16",
-    "@mui/joy": "^5.0.0-beta.19",
-  
-Mosa sans ?????
-hubot font?
-
-styled components - not everything is a component
-static site generator ?
-github pages
-
-
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
