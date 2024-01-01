@@ -1,11 +1,17 @@
 import styled from "styled-components";
 import StyledContainer from "../components/container/StyledContainer";
+import { responsive } from "../assets/styles/bp";
 
 const Hero1 = styled(StyledContainer)`
   padding: 4rem 2rem;
   text-align: center;
   max-width: var(--bp-sm);
+  font-size: var(--fontSize-xl);
+
+  ${responsive.min_sm}{
   font-size: var(--fontSize-xl2);
+
+  }
 
   .accent-color{
     color: var(--accent-11);
