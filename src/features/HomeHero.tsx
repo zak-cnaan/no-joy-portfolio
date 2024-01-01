@@ -1,23 +1,26 @@
 import styled from "styled-components";
 import StyledContainer from "../components/container/StyledContainer";
-import GradieatSpan from "./GradieatSpan";
 
 const Hero1 = styled(StyledContainer)`
-  padding: 2.5rem 2rem;
+  padding: 4rem 2rem;
   text-align: center;
   max-width: var(--bp-sm);
+  font-size: var(--fontSize-xl2);
+
+  .accent-color{
+    color: var(--accent-11);
+  }
 `;
 const Text = styled.p`
-  color: var(--gray-11);
+  /* color: var(--gray-11); */
 `;
 
 function HomeHero() {
   return (
     <Hero1>
       <h1>
-        Lorem ipsum dolor, sit
-        <br />
-        <GradieatSpan>zak cnaan</GradieatSpan> elit.
+        Hello<span className="accent-color">; </span>
+        I<span className="accent-color">'</span>m zak<span className="accent-color">.</span>
       </h1>
       <Text>
         Lorem ipsum dolor sit adipisicing elit. Autem explicabo expedita
