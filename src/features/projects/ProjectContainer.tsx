@@ -48,7 +48,7 @@ function ProjectContainer() {
             <p>{project.text}</p>
             <Badges>
               {project.tags.length &&
-                project.tags.map((tag) => <Badge>{tag}</Badge>)}
+                project.tags.map((tag) => <Badge key={tag}>{tag}</Badge>)}
             </Badges>
           </Padder>
         </Card>

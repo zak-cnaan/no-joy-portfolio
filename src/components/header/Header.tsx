@@ -38,30 +38,49 @@ const StyledHeader = styled.header`
   z-index: 20;
 `;
 
-const Logo = styled(Link)`
-  text-decoration: none;
-  font-size: var(--fontSize-lg);
-  color: var(--gray-12);
+// const Logo = styled(Link)`
+//   text-decoration: none;
+//   font-size: var(--fontSize-lg);
+//   color: var(--gray-12);
 
-  &:hover {
-    color: var(--gray-11);
+//   &:hover {
+//     color: var(--gray-11);
+//   }
+
+//   ${responsive.min_lg} {
+//     font-size: var(--fontSize-xl);
+//   }
+
+//   ${responsive.min_xl} {
+//     font-size: var(--fontSize-xl2);
+//   }
+// `;
+const Z = styled(Link)`
+text-decoration: none;
+  width: 40px;
+  height:40px;
+  border-radius: 8px;
+  box-shadow: 4px 0px var(--accent-10),-4px 0 var(--accent-10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:var(--fontSize-xl2);
+  font-weight: 900;
+  font-style: italic;
+  transition: border-radius 0.2s;
+
+  &:hover{
+    border-radius: 30%;
+
   }
-
-  ${responsive.min_lg} {
-    font-size: var(--fontSize-xl);
-  }
-
-  ${responsive.min_xl} {
-    font-size: var(--fontSize-xl2);
-  }
-`;
-
+`
 function Header(props: {className?: string}) {
   return (
     <StyledHeader className={props.className}>
       <Container>
         <MobileTopMenu />
-        <Logo to={Paths.Home}>zak cnaan</Logo>
+        <Z to={Paths.Home}>Z</Z>
+        {/* <Logo to={Paths.Home}>zak cnaan</Logo> */}
         <Div>
           <TopNav variant="web" />
         </Div>
