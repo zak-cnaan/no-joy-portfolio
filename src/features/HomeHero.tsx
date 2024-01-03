@@ -8,25 +8,25 @@ const Hero1 = styled(StyledContainer)`
   max-width: var(--bp-sm);
   font-size: var(--fontSize-xl);
 
-  ${responsive.min_sm}{
-  font-size: var(--fontSize-xl2);
-
+  ${responsive.min_sm} {
+    font-size: var(--fontSize-xl2);
   }
 
-  .accent-color{
+  .accent-color {
     color: var(--accent-11);
   }
 `;
 const Text = styled.p`
-  /* color: var(--gray-11); */
+  color: var(--gray-11);
 `;
 
 function HomeHero() {
   return (
     <Hero1>
       <h1>
-        Hello<span className="accent-color">; </span>
-        I<span className="accent-color">'</span>m zak<span className="accent-color">.</span>
+        Hello<span className="accent-color">; </span>I
+        <span className="accent-color">'</span>m zak
+        <span className="accent-color">.</span>
       </h1>
       <Text>
         Lorem ipsum dolor sit adipisicing elit. Autem explicabo expedita

@@ -17,6 +17,7 @@ import reactIcon from "../../assets/developer-icons/icons/React-Dark.svg";
 import reduxIcon from "../../assets/developer-icons/icons/Redux.svg";
 import tsIcon from "../../assets/developer-icons/icons/TypeScript.svg";
 
+import jestIcon from "../../assets/developer-icons/icons/Jest.svg";
 
 // Backend
 // import cSharpIcon from "../../assets/developer-icons/icons/CS.svg";
@@ -37,13 +38,12 @@ import tsIcon from "../../assets/developer-icons/icons/TypeScript.svg";
 // import gulpIcon from "../../assets/developer-icons/icons/Gulp.svg";
 // import viteIcon from "../../assets/developer-icons/icons/Vite-Dark.svg";
 // import webpackIcon from "../../assets/developer-icons/icons/Webpack-Dark.svg";
-
+/*
 // design
 import figmaIcon from "../../assets/developer-icons/icons/Figma-Dark.svg";
 import photoShopIcon from "../../assets/developer-icons/icons/Photoshop.svg";
 
 // Testing
-import jestIcon from "../../assets/developer-icons/icons/Jest.svg";
 import cypressIcon from "../../assets/developer-icons/icons/Cypress_Logomark_White-Color.svg"; //  Dark ??
 
 // import gitIcon from "../../assets/developer-icons/icons/Git.svg";
@@ -51,7 +51,7 @@ import jqueryIcon from "../../assets/developer-icons/icons/JQuery.svg";
 
 import nodejsIcon from "../../assets/developer-icons/icons/NodeJS-Dark.svg";
 // import postmanIcon from "../../assets/developer-icons/icons/Postman.svg";
-
+*/
 
 
 // more tools

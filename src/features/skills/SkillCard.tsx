@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { getIconByName } from "./Icons";
-import { responsive } from "../../assets/styles/bp";
 
 const SkillCardCSS = styled.div`
   background-color: var(--gray-3);
