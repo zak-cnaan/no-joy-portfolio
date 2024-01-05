@@ -6,10 +6,12 @@ const SkillCardCSS = styled.div`
   padding: 1rem;;
   border-radius: .5rem;
 */
-  border-left: 0.5rem solid var(--gray-a6);
+border-radius: 1rem;
+  border-left: 0.5rem solid var(--accent-8);
   padding-left: 1rem;
   h3 {
     margin-top: 0.25rem;
+    font-weight: 100;
   }
 `;
 const IconsContainer = styled.div`

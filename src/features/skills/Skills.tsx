@@ -43,7 +43,7 @@ const Container = styled(StyledContainer)`
 
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 4rem;
 
   ${responsive.min_md} {
     grid-template-columns: 1fr 2fr;
@@ -53,15 +53,15 @@ const Container = styled(StyledContainer)`
 const SkillsContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 4rem;
 `;
 const Section = styled.section`
-  background-color: var(--accent-a6);
+  background-color: var(--gray-a3);
 `;
 const Sticky = styled.div`
   ${responsive.min_md} {
     position: sticky;
-    top: 50vh;
+    top: 10rem;
   }
 `;
 function Skills() {
@@ -74,10 +74,8 @@ function Skills() {
               <>What I do</>
             </h2>
             <div className="text">
-              Lorem ipsum dolor sit amet <a href="#">consectetur adipisicing</a>{" "}
-              elit. Ex, vitae laboriosam tempore modi voluptas, saepe impedit
-              laborum debitis consequatur voluptatibus enim at. Fuga commodi
-              laborum dignissimos ab facilis libero voluptatibus.
+              Lorem ipsum dolor sit amet <a href="#">consectetur adipisicing</a>.{" "}
+              I have more than 10 years' experience building software for clients all over the world. Below is a quick overview of my main technical skill sets and technologies I use. Want to find out more about my experience? Check out my online resume and project portfolio.
             </div>
           </Sticky>
         </div>

@@ -59,9 +59,7 @@ function HomeHero() {
         </h1>
         <Text>
           <span className="sub-title">Senior Frontend Developer.</span>
-          Lorem ipsum dolor sit adipisicing elit. Autem explicabo expedita
-          consequuntur aspernatur, sit aut consequatur quos, doloribus ab dolor
-          laboriosam reiciendis nostrum assumenda esse repudiandae, at quae.
+          I'm a software engineer specialised in frontend and backend development for complex scalable web apps. I write about software development on my blog. Want to know how I may help your project? Check out my project portfolio and online resume.
           Saepe, nisi?
         </Text>
       </div>
