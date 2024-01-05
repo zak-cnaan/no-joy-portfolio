@@ -29,7 +29,7 @@ const Ul = styled.ul<{ variant?: string }>`
   display:flex;
   gap:1.25rem;
 
-  ${responsive.min_md}{
+  ${responsive.min_lg}{
     margin-right:1rem;
     gap:2.25rem;
   }

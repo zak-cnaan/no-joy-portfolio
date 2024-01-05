@@ -20,10 +20,12 @@ breakingPoints.forEach((item) => {
 const mediaString = "@media (min-width: ";
 export const responsive = {
     min_xs:mediaString + "0px)",
-    min_sm:mediaString + "600px)",
-    min_md:mediaString + "900px)",
-    min_lg:mediaString + "1200px)",
-    min_xl:mediaString + "1536px)",
+    min_sm:mediaString + "576px)",
+    min_md:mediaString + "768px)",
+    min_lg:mediaString + "992px)",
+    min_xl:mediaString + "1200px)",
+    min_xxl:mediaString + "1400px)",
+    min_xxxl:mediaString + "1536px)",
 }
 
 export default responsiveDesign

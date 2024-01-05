@@ -10,7 +10,7 @@ const ProjectImg = styled.img`
     height: 160px;
     object-fit: cover;
   }
-  ${responsive.min_md} {
+  ${responsive.min_lg} {
     height: 220px;
     object-fit: cover;
   }

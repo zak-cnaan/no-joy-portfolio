@@ -10,7 +10,7 @@ import Paths from "../../routes/Paths";
 const Div = styled.div`
   display: none;
 
-  ${responsive.min_md} {
+  ${responsive.min_lg} {
     display: block;
     margin-left: auto;
   }
@@ -29,7 +29,7 @@ const StyledHeader = styled.header`
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 
-  ${responsive.min_md} {
+  ${responsive.min_lg} {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   }

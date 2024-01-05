@@ -8,9 +8,9 @@ const Container = styled.div`
   margin-left: auto;
   padding-right: 1rem;
   padding-left: 1rem;
-  max-width: var(--bp-lg);
+  max-width: var(--bp-xxl);
 
-  ${responsive.min_md} {
+  ${responsive.min_lg} {
     padding-right: 2rem;
     padding-left: 2rem;
   }

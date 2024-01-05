@@ -36,8 +36,10 @@
   --body-line-height: var(--lineHeight-md);
 
   --bp-xs: 0px;
-  --bp-sm: 600px;
-  --bp-md: 900px;
-  --bp-lg: 1200px;
-  --bp-xl: 1536px;
+  --bp-sm: 576px;
+  --bp-md: 768px;
+  --bp-lg: 992px;
+  --bp-xl: 1200px;
+  --bp-xxl: 1400px;
+  --bp-xxxl: 1536px;
 }

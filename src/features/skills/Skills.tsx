@@ -42,7 +42,6 @@ const Container = styled(StyledContainer)`
   padding-bottom: 2.5rem;
 `;
 const HeroText = styled(StyledContainer)`
-  max-width: var(--bp-sm);
   text-align: center;
   margin-bottom: 2rem;
 
@@ -57,13 +56,7 @@ const SkillsContainer = styled.div`
   gap: 1rem;
   align-items: center;
 
-  ${responsive.min_sm} {
-    > div{
-    max-width: var(--bp-sm);
-    }
-  }
-
-  ${responsive.min_md} {
+  ${responsive.min_lg} {
   align-items: initial;
 
     display: grid;

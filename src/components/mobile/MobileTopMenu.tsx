@@ -10,7 +10,7 @@ import { useState } from "react";
 import TopButton from "../menues/TopButton";
 
 const Div = styled.div`
-  ${responsive.min_md} {
+  ${responsive.min_lg} {
     display: none;
   }
 `;

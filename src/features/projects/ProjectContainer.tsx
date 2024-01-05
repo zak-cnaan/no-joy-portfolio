@@ -14,7 +14,7 @@ const Container = styled.div`
   ${responsive.min_sm} {
     grid-template-columns: repeat(2, 1fr);
   }
-  ${responsive.min_md} {
+  ${responsive.min_lg} {
     grid-template-columns: repeat(3, 1fr);
   }
 `;
