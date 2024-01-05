@@ -2,10 +2,12 @@ import styled from "styled-components";
 import { getIconByName } from "./Icons";
 
 const SkillCardCSS = styled.div`
-  background-color: var(--gray-3);
+  /* background-color: var(--gray-3);
   padding: 1rem;;
   border-radius: .5rem;
-
+*/
+  border-left: 0.5rem solid var(--gray-a6);
+  padding-left: 1rem;
   h3 {
     margin-top: 0.25rem;
   }
