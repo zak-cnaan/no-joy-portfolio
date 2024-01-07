@@ -4,7 +4,7 @@ import SocialNav from "../../components/menues/SocialNav";
 import { MdEmail } from "react-icons/md";
 const SectionCSS = styled.section`
   background-color: var(--gray-3);
-  padding: 2.5rem 0;
+  padding: 4rem 0;
   font-size: var(--fontSize-xl);
   text-align: center;
   .title {
